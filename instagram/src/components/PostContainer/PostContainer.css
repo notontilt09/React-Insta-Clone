@@ -1,0 +1,52 @@
+.post {
+    margin-top: 20px;
+    width: 60%;
+    border: 1px solid lightgray;
+}
+
+.post .title {
+    display: flex;
+    align-items: center;
+    padding-left: 1.5%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.thumbnail {
+    border-radius: 100px;
+    width: 50px;
+    margin-right: 10px;
+}
+
+.title-username {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 10px
+}
+
+.main-img {
+    display: block;
+    max-width: 100%;
+}
+
+.bottom-section {
+    margin: 20px 0 20px 3%;
+}
+
+.bottom-section .icons {
+    margin-bottom: 20px;
+}
+
+.bottom-section .icons .fa-heart {
+    margin-right: 3%;
+}
+
+.number-likes {
+    font-size: 20px;
+}
+
+.timestamp {
+    font-size: 14px;
+    color: gray;
+}
+

@@ -2,9 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     box-sizing: border-box;
     margin: 20px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
 }
 
 .left {
@@ -30,13 +31,11 @@
     border-left: 1px solid black;
 }
 
+input {
+    background: rgb(243, 243, 243);
+}
 
 input::placeholder {
     text-align: center;
 }
 
-.fa-compass {
-}
-
-.searchBar .fa-heart {
-}

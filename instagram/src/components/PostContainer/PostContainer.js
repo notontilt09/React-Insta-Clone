@@ -8,22 +8,27 @@ import moment from 'moment';
 const PostContainer = props => {
     return (
         <div className="post">
-            <img src={props.post.thumbnailUrl} alt='thumbnail'/>
-            <h3>{props.post.username}</h3>
-            <img src={props.post.imageUrl} alt='main-post' />
-            <i className="far fa-heart"></i>
-            <i className="far fa-comment"></i>
-            <h3>{props.post.likes}</h3>
-            {props.post.comments.map(comment => {
-                return <Comment 
-                    key={Math.random()}
-                    comment={comment.text}
-                    username={comment.username}
-                />
-            })}
-            <AddComment />
-            <h3 className='timestamp'>{moment(props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}</h3>
-
+            <div className="title">
+                <img className="thumbnail" src={props.post.thumbnailUrl} alt='thumbnail'/>
+                <h3 className="title-username">{props.post.username}</h3>
+            </div>
+            <img className="main-img" src={props.post.imageUrl} alt='main-post' />
+            <div className="bottom-section">
+                <div className="icons">
+                    <i className="far fa-heart fa-2x"></i>
+                    <i className="far fa-comment fa-2x"></i>
+                </div>
+                <h3 className="number-likes">{props.post.likes} likes</h3>
+                {props.post.comments.map(comment => {
+                    return <Comment 
+                        key={Math.random()}
+                        comment={comment.text}
+                        username={comment.username}
+                    />
+                })}
+                <h3 className='timestamp'>{moment(props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}</h3>
+                <AddComment />
+            </div>
         </div>
     );
 };
