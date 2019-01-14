@@ -31,11 +31,11 @@
     border-left: 1px solid black;
 }
 
-input {
+.searchBar input {
     background: rgb(243, 243, 243);
 }
 
-input::placeholder {
+.searchBar input::placeholder {
     text-align: center;
 }
 

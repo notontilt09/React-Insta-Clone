@@ -7,3 +7,14 @@
     font-weight: bold;
     margin-right: 7px;
 }
+
+.comment-form {
+    padding-left: 3%;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.comment-input {
+    height: 50px;
+    border: none;
+}

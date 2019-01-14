@@ -26,9 +26,9 @@ const PostContainer = props => {
                         username={comment.username}
                     />
                 })}
-                <h3 className='timestamp'>{moment(props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}</h3>
-                <AddComment />
+                <h3 className='timestamp'>{moment(props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}</h3>
             </div>
+            <AddComment />
         </div>
     );
 };
