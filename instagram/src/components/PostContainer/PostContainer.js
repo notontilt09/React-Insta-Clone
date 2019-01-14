@@ -3,6 +3,7 @@ import './PostContainer.css';
 import Comment from '../CommentSection/Comment';
 import AddComment from '../CommentSection/AddComment';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 const PostContainer = props => {
     return (
@@ -21,6 +22,7 @@ const PostContainer = props => {
                 />
             })}
             <AddComment />
+            <h3 className='timestamp'>{moment(props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow()}</h3>
 
         </div>
     );
