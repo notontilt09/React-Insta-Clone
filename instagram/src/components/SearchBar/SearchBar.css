@@ -1,4 +1,45 @@
 .searchBar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+.left {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 25%;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+}
+
+.fa-instagram {
+}
+
+.insta-logo {
+    width: 150px;
+    height: auto;
+    border-left: 1px solid black;
+}
+
+
+input::placeholder {
+    text-align: center;
+}
+
+.fa-compass {
+}
+
+.searchBar .fa-heart {
 }

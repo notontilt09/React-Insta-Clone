@@ -4,14 +4,21 @@ import './SearchBar.css'
 const SearchBar = props => {
     return (
         <div className="searchBar">
-            <i className="fab fa-instagram fa-5x"></i>
-            <span>Instagram Text</span>
-            <form>
-                <input type='text' />
-            </form>
-            <span>insta logo</span>
-            <span>insta logo</span>
-            <span>insta logo</span>
+            <div className="left">
+                <i className="fab fa-instagram fa-3x"></i>
+                <img className='insta-logo' src='https://fontmeme.com/images/instagram-new-logo.png' alt="insta" />
+            </div>
+            <div className='center'>
+                <form className="searchForm">
+                    <input className="searchBox" type='text' placeholder='&#x1F50D; Search' />
+                </form>
+            </div>
+            <div className="right">
+                <i className="far fa-compass fa-2x"></i>
+                <i className="far fa-heart fa-2x"></i>
+                <i className="far fa-user fa-2x"></i>
+            </div>
+            
         </div>
     )
 };
