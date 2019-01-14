@@ -10,6 +10,8 @@ const PostContainer = props => {
             <img src={props.post.thumbnailUrl} alt='thumbnail'/>
             <h3>{props.post.username}</h3>
             <img src={props.post.imageUrl} alt='main-post' />
+            <h4>likeslogo</h4>
+            <h4>commentslogo</h4>
             <h3>{props.post.likes}</h3>
             {props.post.comments.map(comment => {
                 return <Comment 
