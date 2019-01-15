@@ -10,7 +10,13 @@ const SearchBar = props => {
             </div>
             <div className='center'>
                 <form className="searchForm">
-                    <input className="searchBox" type='text' placeholder='&#x1F50D; Search' />
+                    <input 
+                        className="searchBox" 
+                        type='text' 
+                        placeholder='&#x1F50D; Search' 
+                        onChange={props.handleSearch}
+                        value={props.searchText}
+                    />
                 </form>
             </div>
             <div className="right">

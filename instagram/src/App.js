@@ -8,13 +8,31 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      data: [],
+      searchText: ''
     }
   }
 
   componentDidMount() {
     this.setState({
       data: dummyData
+    })
+  }
+
+  handleSearch = e => {
+    this.setState({
+      searchText: e.target.value
+    }, () => this.filterSearch())
+  }
+
+  filterSearch = () => {
+    const posts = (document.querySelectorAll('.post'));
+    posts.forEach(post => {
+      if (post.children[0].textContent.indexOf(this.state.searchText) === -1) {
+        post.classList.add('hide');
+      } else {
+        post.classList.remove('hide');
+      }
     })
   }
 
@@ -29,7 +47,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar 
+          searchText={this.state.searchText}
+          handleSearch={this.handleSearch}  
+        />
         {this.state.data.map((post, index) => {
           return <PostContainer 
             post={post}
