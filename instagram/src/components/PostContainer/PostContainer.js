@@ -15,7 +15,10 @@ const PostContainer = props => {
             <img className="main-img" src={props.post.imageUrl} alt='main-post' />
             <div className="bottom-section">
                 <div className="icons">
-                    <i className="far fa-heart fa-2x"></i>
+                    <i 
+                        className="far fa-heart fa-2x"
+                        onClick={() => props.addLike(props.id)}    
+                    ></i>
                     <i className="far fa-comment fa-2x"></i>
                 </div>
                 <h3 className="number-likes">{props.post.likes} likes</h3>
@@ -43,7 +46,8 @@ PostContainer.propTypes = {
         comments: PropTypes.arrayOf(PropTypes.shape({
             username: PropTypes.string,
             text: PropTypes.string
-        }))
+        })),
+        addLike: PropTypes.func
     })
 }
 
