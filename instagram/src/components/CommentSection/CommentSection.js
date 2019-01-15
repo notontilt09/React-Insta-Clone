@@ -13,6 +13,7 @@ class CommentSection extends React.Component {
         }
     }
 
+    // if post has comments in local storage, set this.state.comments to those comments.  Otherwise use the comments passed down from the dummyData
     componentDidMount() {
         localStorage.getItem(`comments${this.props.id}`) === null ?
             this.setState({
@@ -23,12 +24,15 @@ class CommentSection extends React.Component {
             })
     }
 
+    // update this.state.newComment to user input
     handleChange = e => {
         this.setState({
             newComment: e.target.value
         })
     }
 
+    // update this.state.comments with user input.  Currently using randomly generated username
+    // ***** TODO: grab username from login session instaed of getRandomUserName() ******
     addComment = e => {
         e.preventDefault();
         const comments = [...this.state.comments];
@@ -42,14 +46,17 @@ class CommentSection extends React.Component {
         }, () => localStorage.setItem(`comments${this.props.id}`, JSON.stringify(this.state.comments)))
     }
 
+    // delete comment from post
     deleteComment = id => {
         const comments = [...this.state.comments];
+        // return new copy of array with the index of the clicked comment removed
         const newComments = comments.slice(0,id).concat(comments.slice(id+1));
         this.setState({
             comments: newComments
         }, () => localStorage.setItem(`comments${this.props.id}`, JSON.stringify(this.state.comments)))
     }
 
+    // helper function to generate a random username
     getRandomUserName = () => {
         const user = [];
         const symbols = 'abcdefghijklmnopqrstuvwxyz1234567890.!?';
