@@ -9,7 +9,8 @@ class App extends Component {
     super();
     this.state = {
       data: [],
-      searchText: ''
+      searchText: '',
+      isLiked: false
     }
   }
 
@@ -46,14 +47,24 @@ class App extends Component {
     })
   }
 
-  // add 1 to the number of likes per click
-  // ***** TODO: only allow one like per user ******
+  // if user hasn't liked a photo, clicking the heart will add 1 to number of likes onClick.  If they have clicked, subtract 1 from likes onClick.
   addLike = id => {
     const data = [...this.state.data];
-    data[id].likes++;
-    this.setState({
-      data: data
-    }, () => localStorage.setItem('data', JSON.stringify(this.state.data)));
+    // if user hasn't liked (initial state)
+    if (!this.state.isLiked) {
+      data[id].likes++;
+      this.setState({
+        data: data,
+        isLiked: true
+      }, () => localStorage.setItem('data', JSON.stringify(this.state.data)));
+      // if user has already liked
+    } else {
+      data[id].likes--;
+      this.setState({
+        data: data,
+        isLiked: false
+      }, () => localStorage.setItem('data', JSON.stringify(this.state.data)));
+    }
   }
 
   render() {
