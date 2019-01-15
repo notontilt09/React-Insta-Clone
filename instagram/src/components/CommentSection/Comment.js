@@ -7,6 +7,12 @@ const Comment = props => {
         <div className="comment">
             <span className="comment-username">{props.username}</span>
             <span className="comment-text">{props.comment}</span>
+            <span 
+                onClick={() => props.deleteComment(props.id)} 
+                className="delete-comment">
+            &#10006;
+            </span>
+            
         </div>
     );
 };

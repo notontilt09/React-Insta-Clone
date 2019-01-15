@@ -42,6 +42,14 @@ class CommentSection extends React.Component {
         }, () => localStorage.setItem(`comments${this.props.id}`, JSON.stringify(this.state.comments)))
     }
 
+    deleteComment = id => {
+        const comments = [...this.state.comments];
+        const newComments = comments.slice(0,id).concat(comments.slice(id+1));
+        this.setState({
+            comments: newComments
+        }, () => localStorage.setItem(`comments${this.props.id}`, JSON.stringify(this.state.comments)))
+    }
+
     getRandomUserName = () => {
         const user = [];
         const symbols = 'abcdefghijklmnopqrstuvwxyz1234567890.!?';
@@ -62,11 +70,13 @@ class CommentSection extends React.Component {
                     <i className="far fa-comment fa-2x"></i>
                 </div>
                 <h3 className="number-likes">{this.props.post.likes} likes</h3>
-                {this.state.comments.map(comment => {
+                {this.state.comments.map((comment, index) => {
                     return <Comment 
-                        key={Math.random()}
+                        key={index}
+                        id={index}
                         comment={comment.text}
                         username={comment.username}
+                        deleteComment={this.deleteComment}
                     />
                 })}
                 <h3 className='timestamp'>{moment(this.props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}</h3>
