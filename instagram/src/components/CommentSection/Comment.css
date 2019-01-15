@@ -8,13 +8,17 @@
     margin-right: 7px;
 }
 
-.comment-form {
-    padding-left: 3%;
-    margin-top: -10px;
-    margin-bottom: 10px;
-}
-
 .comment-input {
     height: 50px;
     border: none;
+    width: 100%;
+}
+
+.comment-input:focus {
+    outline: none;
+}
+
+.timestamp {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 20px;
 }

@@ -37,8 +37,15 @@
 
 .bottom-section {
     margin: 20px 3% 20px 3%;
-    padding-bottom: 10px;
-    border-bottom: 1px solid lightgray;
+}
+
+.bottom-section form {
+    margin-top: 5px;
+    margin-bottom: -10px;
+}
+
+.bottom-ssection form input {
+    width: 100%;
 }
 
 .bottom-section .icons {
