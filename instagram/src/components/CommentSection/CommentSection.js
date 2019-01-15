@@ -29,13 +29,22 @@ class CommentSection extends React.Component {
         e.preventDefault();
         const comments = [...this.state.comments];
         comments.push({
-            username: 'TEST',
+            username: this.getRandomUserName(),
             text: this.state.newComment
         })
         this.setState({
             comments: comments,
             newComment: ''
         })
+    }
+
+    getRandomUserName = () => {
+        const user = [];
+        const symbols = 'abcdefghijklmnopqrstuvwxyz1234567890.!?';
+        for (let i = 0; i < 10; i++) {
+            user.push(symbols[Math.floor(Math.random()*symbols.length)])
+        }
+        return user.join('');
     }
 
     render() {
@@ -60,7 +69,8 @@ class CommentSection extends React.Component {
                 <AddComment 
                     newComment={this.state.newComment}
                     addComment={this.addComment}
-                    handleChange={this.handleChange}    
+                    handleChange={this.handleChange} 
+                    getRandomUserName={this.getRandomUserName}   
                 />
             </div>
         )
