@@ -10,7 +10,7 @@ const Comment = props => {
             <span 
                 onClick={() => props.deleteComment(props.id)} 
                 className="delete-comment">
-            &#10006;
+            &#9747;
             </span>
             
         </div>

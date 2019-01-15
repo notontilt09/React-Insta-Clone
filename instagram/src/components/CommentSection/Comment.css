@@ -22,3 +22,15 @@
     border-bottom: 1px solid lightgray;
     padding-bottom: 20px;
 }
+
+.delete-comment {
+    font-weight: bold;
+    opacity: 0.5;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.delete-comment:hover {
+    opacity: 1;
+    color: red;
+}
