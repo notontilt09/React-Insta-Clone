@@ -14,9 +14,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({
-      data: dummyData
-    })
+    localStorage.getItem('data') === null ?
+      this.setState({
+        data: dummyData
+      }) :
+      this.setState({
+        data: JSON.parse(localStorage.getItem('data'))
+      })
   }
 
   handleSearch = e => {
@@ -41,7 +45,7 @@ class App extends Component {
     data[id].likes++;
     this.setState({
       data: data
-    })
+    }, () => localStorage.setItem('data', JSON.stringify(this.state.data)));
   }
 
   render() {

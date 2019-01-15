@@ -9,14 +9,19 @@ class CommentSection extends React.Component {
         super(props);
         this.state = {
             comments: [],
-            newComment: ''
+            newComment: '',
+            id: Math.random()
         }
     }
 
     componentDidMount() {
-        this.setState({
-            comments: this.props.post.comments
-        })
+        localStorage.getItem(`comments${this.state.id}`) === null ?
+            this.setState({
+                comments: this.props.post.comments
+            }) :
+            this.setState({
+                comments: JSON.parse(localStorage.getItem((`comments${this.state.id}`)))
+            })
     }
 
     handleChange = e => {
@@ -35,7 +40,7 @@ class CommentSection extends React.Component {
         this.setState({
             comments: comments,
             newComment: ''
-        })
+        }, () => localStorage.setItem(`comments${this.state.id}`, JSON.stringify(this.state.comments)))
     }
 
     getRandomUserName = () => {
