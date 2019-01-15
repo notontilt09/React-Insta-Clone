@@ -10,7 +10,6 @@ class App extends Component {
     this.state = {
       data: [],
       searchText: '',
-      isLiked: false
     }
   }
 
@@ -18,12 +17,12 @@ class App extends Component {
     // if nothing in local storage, set the data to the dummy data
     localStorage.getItem('data') === null ?
       this.setState({
-        data: dummyData
+        data: dummyData,
       }) :
       // if 'data' exists in local storage, hydrate this.state.data with that data
       this.setState({
         data: JSON.parse(localStorage.getItem('data'))
-      })
+      });
   }
 
   // method for searching posts based on user input, callback runs filterSearch method
@@ -51,21 +50,13 @@ class App extends Component {
   addLike = id => {
     const data = [...this.state.data];
     // if user hasn't liked (initial state)
-    if (!this.state.isLiked) {
       data[id].likes++;
       this.setState({
         data: data,
-        isLiked: true
       }, () => localStorage.setItem('data', JSON.stringify(this.state.data)));
       // if user has already liked
-    } else {
-      data[id].likes--;
-      this.setState({
-        data: data,
-        isLiked: false
-      }, () => localStorage.setItem('data', JSON.stringify(this.state.data)));
     }
-  }
+  
 
   render() {
     return (
