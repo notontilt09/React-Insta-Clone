@@ -16,11 +16,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Login />
         <PostsPage />
       </div>
     );
   }
 }
 
-export default authenticate(App);
+export default authenticate(App)(Login);

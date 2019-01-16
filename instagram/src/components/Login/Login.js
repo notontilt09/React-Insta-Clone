@@ -15,7 +15,7 @@ class Login extends React.Component {
         })
     }
 
-    handleLogin = e => {
+    handleLogin = () => {
         const user = this.state.username;
         localStorage.setItem('user', user);
     }
