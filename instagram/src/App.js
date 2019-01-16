@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // if nothing in local storage, set the data to the dummy data
+    // if nothing in local storage, hydrate this.state.data with dummyData
     localStorage.getItem('data') === null ?
       this.setState({
         data: dummyData,
