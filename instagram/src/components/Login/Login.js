@@ -1,4 +1,5 @@
 import React from 'react'
+import './Login.css'
 
 class Login extends React.Component {
     constructor(props) {
@@ -23,8 +24,10 @@ class Login extends React.Component {
     render() {
         return (
             <div className="login-form">
-                <form>
+                <form className="login-form-main">
+                    <h1>Welcome to React&middot;Instagram!</h1>
                     <input 
+                        className="login-form-username"
                         type="text"
                         required 
                         name="username"
@@ -33,9 +36,11 @@ class Login extends React.Component {
                         onChange={this.handleChange}    
                     />
                     <input 
+                        className="login-form-password"
                         type="text" 
                         name="password"
                         placeholder="password" 
+                        autoComplete='off'
                         value={this.state.password}
                         onChange={this.handleChange}    
                     />

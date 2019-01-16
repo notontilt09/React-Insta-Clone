@@ -56,7 +56,12 @@ class PostsPage extends Component {
             data: data,
         }, () => localStorage.setItem('data', JSON.stringify(this.state.data)));
         // if user has already liked
-        }
+    }
+
+    logout = () => {
+        localStorage.removeItem('user');
+        window.location.reload();
+    }
 
     render() {
         return (
@@ -64,6 +69,7 @@ class PostsPage extends Component {
             <SearchBar 
                 searchText={this.state.searchText}
                 handleSearch={this.handleSearch}  
+                logout={this.logout}
             />
     
             {this.state.data.map((post, index) => {
