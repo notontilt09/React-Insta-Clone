@@ -10,7 +10,8 @@ class CommentSection extends React.Component {
         this.state = {
             comments: [],
             newComment: '',
-            isLiked: false
+            isLiked: false,
+            likes: 0
         }
     }
 
@@ -18,10 +19,12 @@ class CommentSection extends React.Component {
     componentDidMount() {
         localStorage.getItem(`comments${this.props.id}`) === null ?
             this.setState({
-                comments: this.props.post.comments
+                comments: this.props.post.comments,
+                likes: this.props.post.likes
             }) :
             this.setState({
-                comments: JSON.parse(localStorage.getItem((`comments${this.props.id}`)))
+                comments: JSON.parse(localStorage.getItem((`comments${this.props.id}`))),
+                likes: this.props.post.likes
             })
     }
 
