@@ -25,7 +25,8 @@ class Login extends React.Component {
             <div className="login-form">
                 <form>
                     <input 
-                        type="text" 
+                        type="text"
+                        required 
                         name="username"
                         placeholder="username" 
                         value={this.state.username}
