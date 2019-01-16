@@ -10,6 +10,7 @@ class CommentSection extends React.Component {
         this.state = {
             comments: [],
             newComment: '',
+            isLiked: false
         }
     }
 
@@ -56,6 +57,23 @@ class CommentSection extends React.Component {
         }, () => localStorage.setItem(`comments${this.props.id}`, JSON.stringify(this.state.comments)))
     }
 
+    // show the delete option for a comment if user hovers over the comment
+    showDelete = e => { 
+            if (e.target.classList.value !== 'comment') {
+                e.target.parentElement.children[2].classList.remove('hide');
+            }
+        
+        
+        // if (e.target)
+        // console.log(e.target.parentElement.children[2]);
+    }
+
+    removeDelete = e => {
+        if (e.target.classList.value !== 'comment') {
+            e.target.parentElement.children[2].classList.add('hide')
+        }
+    }
+
     // helper function to generate a random username
     getRandomUserName = () => {
         const user = [];
@@ -72,7 +90,9 @@ class CommentSection extends React.Component {
                 <div className="icons">
                     <i 
                         className="far fa-heart fa-2x"
-                        onClick={() => this.props.addLike(this.props.id)}    
+                        onClick={() => {
+                            if (!this.state.isLiked) {this.props.addLike(this.props.id)}
+                        }}    
                     ></i>
                     <i className="far fa-comment fa-2x"></i>
                 </div>
@@ -84,6 +104,8 @@ class CommentSection extends React.Component {
                         comment={comment.text}
                         username={comment.username}
                         deleteComment={this.deleteComment}
+                        showDelete={this.showDelete}
+                        removeDelete={this.removeDelete}
                     />
                 })}
                 <h3 className='timestamp'>{moment(this.props.post.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}</h3>

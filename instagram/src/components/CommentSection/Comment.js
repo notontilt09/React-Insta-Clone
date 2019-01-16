@@ -4,12 +4,16 @@ import PropTypes from 'prop-types';
 
 const Comment = props => {
     return (
-        <div className="comment">
+        <div 
+            className="comment"
+            onMouseEnter={props.showDelete}
+            onMouseLeave={props.removeDelete}    
+        >
             <span className="comment-username">{props.username}</span>
             <span className="comment-text">{props.comment}</span>
             <span 
                 onClick={() => props.deleteComment(props.id)} 
-                className="delete-comment">
+                className="delete-comment hide">
             &#9747;
             </span>
             
