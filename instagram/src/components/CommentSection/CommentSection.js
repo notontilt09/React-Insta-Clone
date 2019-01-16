@@ -59,18 +59,18 @@ class CommentSection extends React.Component {
 
     // show the delete option for a comment if user hovers over the comment
     showDelete = e => { 
-            if (e.target.classList.value !== 'comment') {
-                e.target.parentElement.children[2].classList.remove('hide');
-            }
-        
-        
-        // if (e.target)
-        // console.log(e.target.parentElement.children[2]);
+        if (e.target.classList.value !== 'comment') {
+            e.target.parentElement.children[2].classList.remove('hide');
+        } else {
+            e.target.children[2].classList.remove('hide');
+        }   
     }
 
     removeDelete = e => {
         if (e.target.classList.value !== 'comment') {
             e.target.parentElement.children[2].classList.add('hide')
+        } else {
+            e.target.children[2].classList.add('hide');
         }
     }
 
