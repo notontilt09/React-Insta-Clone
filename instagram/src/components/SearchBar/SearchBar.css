@@ -1,0 +1,41 @@
+/* .searchBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 20px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+} */
+
+/* .left {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 25%;
+} */
+
+/* .center {
+    text-align: center;
+}
+
+.right {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+} */
+
+/* .insta-logo {
+    width: 150px;
+    height: auto;
+    border-left: 1px solid black;
+} */
+
+/* .searchBar input {
+    background: rgb(243, 243, 243);
+}
+
+.searchBar input::placeholder {
+    text-align: center;
+} */
+

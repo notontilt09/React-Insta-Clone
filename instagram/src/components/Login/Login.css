@@ -1,0 +1,13 @@
+.login-form-main {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 300px auto;
+    text-align: center;
+}
+
+.login-form-main input, button {
+    text-align: center;
+    width: 30%;
+    margin: 5px auto;
+}

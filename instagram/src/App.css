@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+.App {
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
