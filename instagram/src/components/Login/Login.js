@@ -37,7 +37,7 @@ class Login extends React.Component {
                     />
                     <input 
                         className="login-form-password"
-                        type="text" 
+                        type="password" 
                         name="password"
                         placeholder="password" 
                         autoComplete='off'
